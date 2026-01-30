@@ -1,6 +1,13 @@
+import { RectangleHorizontal, RectangleVertical, Square } from 'lucide-react'
+
 import React from 'react'
 
 const AspectRatioSection = () => {
+  const iconmap={
+    '16:9':<RectangleHorizontal className='size-6'/>,
+    '1:1':<Square className='size-6'/>,
+    '9:16':<RectangleVertical className='size-6'/>
+  } as Record<string,React.ReactNode>;
   return (
     <div className='space-y-3 dark'>
       <label className='block text-sm font-medium text-zinc-200'>Aspect Ratio</label>
