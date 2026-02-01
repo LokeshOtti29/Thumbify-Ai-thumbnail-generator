@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Softbackdrop from '../components/Softbackdrop';
 import { button } from 'motion/react-client';
 import AspectRatioSection from '../components/AspectRatioSection';
+import type{AspectRatio } from '../assets/assets';
 
 const Generate = () => {
    const {id} = useParams();
@@ -10,7 +11,7 @@ const Generate = () => {
    const [additionalDetails,setAdditionalDetails] = useState('');
    const [thumbnail,setThumbnail]= useState(null);
    const[loading,setLoading] = useState(false);
-   const[aspectratio,setAspectratio] = useState('16:9');
+   const[aspectratio,setAspectratio] = useState<AspectRatio>('16:9');
   return (
     <>
      <Softbackdrop/>
