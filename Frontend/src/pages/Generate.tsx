@@ -12,6 +12,8 @@ const Generate = () => {
    const [thumbnail,setThumbnail]= useState(null);
    const[loading,setLoading] = useState(false);
    const[aspectratio,setAspectratio] = useState<AspectRatio>('16:9');
+   const [style,setStyle] = useState('Bold & Graphic');
+   const [styleDropdownOpen,setStyleDropDownOpen] = useState(false);
   return (
     <>
      <Softbackdrop/>
@@ -35,7 +37,7 @@ const Generate = () => {
                 </div>
               </div>
               {/* AspectRatioselecter */}
-              <AspectRatioSection/>
+              <AspectRatioSection value={aspectratio} onChange={setAspectratio}/>
               {/* StyleSelector */}
               {/* ColorSchemeSelector */}
               {/* Details */}
