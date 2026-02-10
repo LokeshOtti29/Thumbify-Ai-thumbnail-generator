@@ -5,6 +5,7 @@ import { button } from 'motion/react-client';
 import AspectRatioSection from '../components/AspectRatioSection';
 import{type ThumbnailStyle, type AspectRatio } from '../assets/assets';
 import StyleSelector from '../components/StyleSelector';
+import ColorSchemeSelector from '../components/ColorSchemeSelector';
 
 const Generate = () => {
    const {id} = useParams();
@@ -15,6 +16,7 @@ const Generate = () => {
    const[aspectratio,setAspectratio] = useState<AspectRatio>('16:9');
    const [style,setStyle] = useState<ThumbnailStyle>('Bold & Graphic');
    const [styleDropdownOpen,setStyleDropDownOpen] = useState(false);
+   const [colorSchemeId,setColorSchemeId] = useState<string>('vibrant');
   return (
     <>
      <Softbackdrop/>
@@ -42,6 +44,7 @@ const Generate = () => {
               {/* StyleSelector */}
               <StyleSelector value={style} onChange={setStyle} IsOpen={styleDropdownOpen} setIsOpen={setStyleDropDownOpen}/>
               {/* ColorSchemeSelector */}
+              <ColorSchemeSelector value={colorSchemeId} onChange={setColorSchemeId}/>
               {/* Details */}
               <div className='space-y-2'>
                  <label>
