@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom'
 import Softbackdrop from '../components/Softbackdrop';
 import { button } from 'motion/react-client';
 import AspectRatioSection from '../components/AspectRatioSection';
-import type{AspectRatio } from '../assets/assets';
+import{type ThumbnailStyle, type AspectRatio } from '../assets/assets';
+import StyleSelector from '../components/StyleSelector';
 
 const Generate = () => {
    const {id} = useParams();
@@ -12,7 +13,7 @@ const Generate = () => {
    const [thumbnail,setThumbnail]= useState(null);
    const[loading,setLoading] = useState(false);
    const[aspectratio,setAspectratio] = useState<AspectRatio>('16:9');
-   const [style,setStyle] = useState('Bold & Graphic');
+   const [style,setStyle] = useState<ThumbnailStyle>('Bold & Graphic');
    const [styleDropdownOpen,setStyleDropDownOpen] = useState(false);
   return (
     <>
@@ -39,6 +40,7 @@ const Generate = () => {
               {/* AspectRatioselecter */}
               <AspectRatioSection value={aspectratio} onChange={setAspectratio}/>
               {/* StyleSelector */}
+              <StyleSelector value={style} onChange={setStyle} IsOpen={styleDropdownOpen} setIsOpen={setStyleDropDownOpen}/>
               {/* ColorSchemeSelector */}
               {/* Details */}
               <div className='space-y-2'>
